@@ -2,12 +2,12 @@ import nltk
 from nltk.align.ibm1 import IBMModel1
 from nltk.align.ibm2 import IBMModel2
 
-# Initialize IBM Model 1 and return the model.
+# Initialize IBM Model 1 using 10 iterations and return the model.
 def create_ibm1(aligned_sents):
 	return IBMModel1(aligned_sents, 10)
 
 
-# Initialize IBM Model 2 and return the model.
+# Initialize IBM Model 2 using 10 iterations and return the model.
 def create_ibm2(aligned_sents):
 	return IBMModel2(aligned_sents, 10)
 
@@ -38,7 +38,6 @@ def save_model_output(aligned_sents, model, file_name):
         	mots = str(res.mots)
         	align = str(res.alignment)
         	f.write(words+'\n'+mots+'\n'+align+'\n'+'\n')
-    
     	f.close()
 
 
@@ -60,7 +59,7 @@ def main(aligned_sents):
     print('Average AER: {0:.3f}\n'.format(avg_aer))
 
 
-#For different iterations
+#For testing different iteration numbers
 def testmain(aligned_sents):
 	for n in range(19, 20):
 		print ('%s\n'%(n))
