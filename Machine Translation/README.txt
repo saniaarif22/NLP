@@ -364,4 +364,17 @@ Performance of the models:
 Thus, we observe that, the Berkeley Aligner performs the best among the three models, with the lowest AER. The reason for this is the Berkeley Aligner considers the intersection of the prediction of the English to German and the German to English models (two directions) to reach the agreement. 
 Additionally, the Berkeley Aligner makes predictions of the models agreement at test time, in addition to the agreement during training. The joint training of the two directional models, at opposite direction to give better performance.
 
+Q6
+
+
+I implemented a Better Berkeley Aligner that gave results as follows:
+
+Better Berkeley Aligner
+---------------------------
+Average AER: 0.542
+
+The difference I made was in the align function, where I kept track of the maximum align for each entry in align_sent.mots and instead of calling the built in Alignment function on the alignment list (consisting of pairs of i values and the max align probability), I returned the alignment list as is.
+
+Compared to both the IBMModels 1 and 2, this aligner performs better, with the lowest AER due to the way that agreement is calculated in this aligner.
+
 
