@@ -29,7 +29,7 @@ class BerkeleyAligner():
 				best_pt = j
 		alignment.append((i, best_pt))   
 
-	return AlignedSent(align_sent.words, align_sent.mots, Alignment(alignment))
+	return AlignedSent(align_sent.words, align_sent.mots, Alignment(alignment)) #uses built-in Alignment func
 
     # Implement the EM algorithm. num_iters is the number of iterations. Returns the 
     # translation and distortion parameters as a tuple.
